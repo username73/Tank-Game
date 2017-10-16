@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class guncollision : MonoBehaviour {
+public class destroyBoundary : MonoBehaviour 
+{
+	void OnTriggerExit(Collider other)
+	{
+		Destroy(other.gameObject);
+	}
 
 	// Use this for initialization
 	void Start () {

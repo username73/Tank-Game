@@ -11,6 +11,20 @@ public class movescript : MonoBehaviour {
 	public Boundary boundary;
 	public float speed;
 
+	public GameObject Bolt;
+	public Transform ShotSpawn;
+	public float fireRate;
+
+	private float nextFire;
+
+	void Update ()
+	{
+		if (Input.GetButton("Fire1") && Time.time > nextFire)
+		{
+			nextFire = Time.time + fireRate;
+			Instantiate(Bolt, ShotSpawn.position, ShotSpawn.rotation);
+		}
+	}
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody> ();
