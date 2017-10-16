@@ -7,13 +7,13 @@ public class Boundary
 }
 public class movescript : MonoBehaviour {
 	private Rigidbody rb;
-	public float tilt;
+//	public float tilt;
 	public Boundary boundary;
 	public float speed;
 
-	public GameObject Bolt;
-	public Transform ShotSpawn;
-	public float fireRate;
+//	public GameObject Bolt;
+//	public Transform ShotSpawn;
+/*	public float fireRate;
 
 	private float nextFire;
 
@@ -25,6 +25,7 @@ public class movescript : MonoBehaviour {
 			Instantiate(Bolt, ShotSpawn.position, ShotSpawn.rotation);
 		}
 	}
+	*/
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody> ();
@@ -46,7 +47,7 @@ public class movescript : MonoBehaviour {
 			0.0f, 
 			Mathf.Clamp (rb.position.z, boundary.zMin, boundary.zMax)
 		);
-		rb.rotation = Quaternion.Euler (0.0f, 0.0f, rb.velocity.x * -tilt);
+//		rb.rotation = Quaternion.Euler (0.0f, 0.0f, rb.velocity.x * -tilt);
 	}
 
 }
