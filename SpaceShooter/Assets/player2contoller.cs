@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Boundary
+public class Boundary2
 {
-	public float xMin, xMax, zMin, zMax;
+	public float xMi, xMa, zMi, zMa;
 }
-public class movescript : MonoBehaviour {
+public class player2controller : MonoBehaviour {
 	private Rigidbody rb;
 	public float tilt;
 	public Boundary boundary;
@@ -34,7 +34,7 @@ public class movescript : MonoBehaviour {
 	void FixedUpdate ()
 
 	{
-		
+
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
@@ -46,13 +46,12 @@ public class movescript : MonoBehaviour {
 
 		rb.position = new Vector3 
 			(
-			Mathf.Clamp (rb.position.x, boundary.xMin, boundary.xMax),
-			0.0f, 
-			Mathf.Clamp (rb.position.z, boundary.zMin, boundary.zMax)
-		);
+				Mathf.Clamp (rb.position.x, boundary.xMin, boundary.xMax),
+				0.0f, 
+				Mathf.Clamp (rb.position.z, boundary.zMin, boundary.zMax)
+			);
 		//rb.rotation = Quaternion.Euler (0.0f, 0.0f, 0.0f);
 	}
 
 }
-	// Use this for initialization
-	
+// Use this for initialization
