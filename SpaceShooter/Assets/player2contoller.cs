@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Boundary2
+public class BoundaryB
 {
 	public float xMi, xMa, zMi, zMa;
 }
@@ -19,7 +19,7 @@ public class player2controller : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetButton("Fire1") && Time.time > nextFire)
+		if (Input.GetButton("Fire2") && Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
 			Instantiate(Bolt, ShotSpawn.position, ShotSpawn.rotation);
